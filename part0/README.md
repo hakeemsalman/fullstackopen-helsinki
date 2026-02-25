@@ -73,6 +73,8 @@ sequenceDiagram
     Note right of browser: The browser executes the callback function that renders the notes
 ```
 
+---
+
 # 0.6: New note in Single page app diagram
 
 ```mermaid
