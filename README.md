@@ -3,7 +3,7 @@
 ```
 part0
 part1
-  react-intro
+  course-info
 ```
 
 Put the whole react repository of the project to each folder except the folder <i>node_modules</i>
