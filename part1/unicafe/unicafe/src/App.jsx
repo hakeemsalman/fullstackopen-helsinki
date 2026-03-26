@@ -1,19 +1,31 @@
 import {useState} from "react"
 
-const Display = (props) => {
+const Display = ({good, bad, neutral}) => {
+  const total = good + bad + neutral
   return (
     <>
       <div>
         Good:
-        {props.good}
+        {good}
       </div>
       <div>
         Neutral:
-        {props.neutral}
+        {neutral}
       </div>
       <div>
         Bad:
-        {props.bad}
+        {bad}
+      </div>
+      <div>
+        all: {total}
+      </div>
+      <div>
+        average:
+        {(good - bad) / total}
+      </div>
+      <div>
+        positive:
+        {(good / total) * 100}
       </div>
     </>
   )
