@@ -1,6 +1,6 @@
-import {useState} from "react"
+import { useState } from "react"
 
-const Display = ({good, bad, neutral}) => {
+const Display = ({ good, bad, neutral }) => {
   const total = good + bad + neutral
   return (
     <>
@@ -47,6 +47,15 @@ const Header = (props) => {
   )
 }
 
+const Statistics = ({ good, bad, neutral }) => {
+  return (
+    <>
+      <Header text={'statistics'} />
+      <Display good={good} bad={bad} neutral={neutral} />
+    </>
+  )
+}
+
 const App = () => {
   const [good, setGood] = useState(0)
   const [bad, setBad] = useState(0)
@@ -70,8 +79,7 @@ const App = () => {
       <Button onClick={handleGood} text="good" />
       <Button onClick={handleNeutral} text="neutral" />
       <Button onClick={handleBad} text="bad" />
-      <Header text={'statistics'} />
-      <Display good={good} bad={bad} neutral={neutral} />
+      <Statistics good={good} bad={bad} neutral={neutral} />
     </div>
   )
 }
