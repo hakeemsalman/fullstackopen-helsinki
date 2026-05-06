@@ -5,6 +5,7 @@ part0
 part1
   course-info
   unicafe
+    anecdotes
 ```
 
 # Installation of Vite React
