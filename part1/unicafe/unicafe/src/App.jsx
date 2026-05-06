@@ -47,8 +47,15 @@ const Header = (props) => {
   )
 }
 
+const StatisticsLine = ({ text, value }) => {
+
+  return (
+    <div>{text}:{value}</div>
+  )
+}
+
 const Statistics = ({ good, bad, neutral }) => {
-  if (good == 0 || bad == 0 || !neutral == 0) {
+  if (good == 0 && bad == 0 && neutral == 0) {
     return (
       <div>no feedback given</div>
     )
@@ -56,7 +63,12 @@ const Statistics = ({ good, bad, neutral }) => {
   return (
     <>
       <Header text={'statistics'} />
-      <Display good={good} bad={bad} neutral={neutral} />
+      <StatisticsLine text="good" value={good} />
+      <StatisticsLine text="bad" value={bad} />
+      <StatisticsLine text="neutral" value={neutral} />
+      <StatisticsLine text="total" value={good + bad + neutral} />
+      <StatisticsLine text="average" value={(good - bad) / (good + bad + neutral)} />
+      <StatisticsLine text="percentage" value={(good / (good + bad + neutral)) * 100} />
     </>
   )
 }
