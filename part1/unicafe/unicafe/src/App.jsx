@@ -48,6 +48,11 @@ const Header = (props) => {
 }
 
 const Statistics = ({ good, bad, neutral }) => {
+  if (good == 0 || bad == 0 || !neutral == 0) {
+    return (
+      <div>no feedback given</div>
+    )
+  }
   return (
     <>
       <Header text={'statistics'} />
